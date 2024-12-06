@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タクシー停留所空き情報</title>
+    <style>
+        /* 既存のスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #1a56db;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* 新規追加: ナビゲーションリンク用スタイル */
+        .nav-links {
+            background: white;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #1a56db;
+            font-weight: 500;
+            transition: all 0.2s;
+            background-color: #f1f5f9;
+        }
+
+        .nav-link:hover {
+            background-color: #1a56db;
+            color: white;
+        }
+
+        /* 既存のスタイル続き */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-filters {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .parking-table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .parking-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .parking-table th {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .parking-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-edit {
+            background-color: #3b82f6;
+            color: white;
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .parking-table {
+                overflow-x: auto;
+            }
+
+            .btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>タクシー停留所空き情報</h1>
+    </header>
+
+    <main class="container">
+        <!-- 新規追加: タグ一覧へのリンク -->
+        <div class="search-filters">
+            <input type="text" class="search-input" placeholder="停留所名や住所で検索">
+        </div>
+
+        <div class="parking-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>停留所名</th>
+                        <th>住所</th>
+                        <th>空き</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>神戸空港第1ターミナル</td>
+                        <td>兵庫県神戸市1-1-1</td>
+                        <td>0/5</td>
+                    </tr>
+                    <tr>
+                        <td>神戸空港第2ターミナル</td>
+                        <td>兵庫県神戸市2-2-2</td>
+                        <td>0/2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

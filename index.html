@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>駐車場管理システム - 一覧</title>
+    <style>
+        /* リセットCSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ヘッダー */
+        .header {
+            background-color: #1a56db;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* メインコンテンツ */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* 検索フィルター */
+        .search-filters {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* テーブル */
+        .parking-table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .parking-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .parking-table th {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .parking-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* ボタン */
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-edit {
+            background-color: #3b82f6;
+            color: white;
+            margin-right: 0.5rem;
+        }
+
+        .btn-delete {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .parking-table {
+                overflow-x: auto;
+            }
+            
+            .btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>駐車場管理システム</h1>
+    </header>
+
+    <main class="container">
+        <div class="search-filters">
+            <input type="text" class="search-input" placeholder="駐車場名や住所で検索">
+        </div>
+
+        <div class="parking-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>駐車場名</th>
+                        <th>住所</th>
+                        <th>空き</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>中央パーキング</td>
+                        <td>東京都千代田区丸の内1-1-1</td>
+                        <td>3/5</td>
+                        <td>
+                            <button class="btn btn-edit">編集</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>駅前パーキング</td>
+                        <td>東京都新宿区西新宿2-8-1</td>
+                        <td>1/2</td>
+                        <td>
+                            <button class="btn btn-edit">編集</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>タワーパーキング</td>
+                        <td>東京都港区六本木6-10-1</td>
+                        <td>8/8</td>
+                        <td>
+                            <button class="btn btn-edit">編集</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
